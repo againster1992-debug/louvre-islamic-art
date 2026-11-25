@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#08141d">
+<title>图案的奇迹 · 浦东美术馆线上展厅</title>
+<meta name="description" content="浦东美术馆「图案的奇迹：卢浮宫印度、伊朗与奥斯曼的艺术杰作」线上展厅，3 个帝国展厅、17 个单元、160 组展项、283 幅图像，附帝国地图、时间轴、展览百科与文物目录。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="图案的奇迹 · 浦东美术馆线上展厅">
+<meta property="og:description" content="莫卧儿、波斯与奥斯曼三个帝国展厅，沿珍宝、诗歌与图案三条路径，进入伊斯兰世界的艺术。">
+<meta property="og:image" content="assets/hall-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/hall-1.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="assets/style.css?v=20261125l">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ 首页 ============ -->
+  <section id="intro" class="screen intro home">
+    <img class="intro-bg" id="introBg" alt="" referrerpolicy="no-referrer">
+    <div class="intro-grain"></div>
+    <header class="intro-top">
+      <div class="brand-mark">图</div>
+      <div class="brand-text">图案的奇迹 · 线上展厅</div>
+      <img class="otter-avatar" src="assets/otter-face.png" alt="獭的游乐场" title="獭的游乐场">
+      <div class="intro-top-actions">
+        <button class="ghost-btn dark music-btn" id="introMusicBtn"><span class="music-icon">♪</span><span class="music-text">Ceddin Deden</span></button>
+        <button class="ghost-btn dark" id="introMapBtn">帝国地图</button>
+        <button class="ghost-btn dark" id="introWikiBtn">展览百科</button>
+        <button class="ghost-btn dark" id="introTimelineBtn">时间轴</button>
+        <button class="ghost-btn dark" id="introCatalogBtn">文物目录</button>
+        <button class="ghost-btn dark" id="introGuideBtn">观展指南</button>
+      </div>
+    </header>
+
+    <main class="home-main">
+      <div class="home-head">
+        <p class="eyebrow">A VIRTUAL EXHIBITION OF ISLAMIC ART</p>
+        <h1 class="home-title"><span>图案</span><span>的奇迹</span></h1>
+        <p class="home-sub">卢浮宫印度、伊朗与奥斯曼的艺术杰作 · 浦东美术馆特展线上展厅</p>
+        <p class="home-lede">从莫卧儿的玉石与水晶，到波斯的诗歌与细密画，再到奥斯曼的伊兹尼克陶器与宫廷书法——三个帝国展厅，三条进入伊斯兰艺术世界的路径。把鼠标移到展厅卡片上，可展开该厅导览。</p>
+        <div class="intro-stats" id="introStats"></div>
+      </div>
+
+      <div class="hall-grid" id="hallGrid"></div>
+
+      <div class="home-actions">
+        <button class="primary" id="openMapBtn">打开帝国地图 <span>→</span></button>
+        <button class="secondary" id="openTimelineBtn">时间轴 · 各帝国器物</button>
+        <button class="secondary" id="openWikiBtn">展览百科 · 二十篇词条</button>
+      </div>
+      <p class="intro-source">图文资料整理自微信公众号「獭的游乐场」《浦东美术馆「图案的奇迹」全纪录》系列（共 8 篇）；展品照片为作者实拍，介绍来自展厅说明。本页为非官方线上展厅，仅供学习交流。</p>
+    </main>
+
+    <footer class="intro-footer">
+      <span class="footer-brand"><img class="otter-foot" src="assets/otter.png" alt=""> 獭的游乐场</span>
+      <span>3 个展厅 · 17 个单元</span>
+      <span class="intro-enter-hint">点击展厅卡片开始漫游</span>
+    </footer>
+  </section>
+
+  <!-- ============ 展厅 ============ -->
+  <section id="gallery" class="screen gallery" data-hall="persia" hidden>
+    <header class="gallery-top">
+      <button class="icon-btn" id="backHomeBtn" title="返回首页">← <span class="home-text">首页</span></button>
+      <div class="gallery-brand"><span class="mini-seal">图</span><span>图案的奇迹 · 线上展厅</span><img class="otter-mini" src="assets/otter-face.png" alt="獭的游乐场" title="獭的游乐场"></div>
+      <div class="gallery-room-label">
+        <span id="roomChapter">第一单元</span>
+        <b id="roomTitle">波斯基因</b>
+      </div>
+      <div class="hall-switch" id="hallSwitch"></div>
+      <div class="gallery-progress" title="观展进度">
+        <div class="progress-track"><i id="progressBar"></i></div>
+        <span id="progressText">0 / 0</span>
+      </div>
+      <button class="ghost-btn music-btn" id="galleryMusicBtn"><span class="music-icon">♪</span><span class="lbl-full">Ceddin Deden</span></button>
+      <button class="ghost-btn" id="openMapBtn2"><span class="lbl-full">帝国地图</span><span class="lbl-short">地图</span></button>
+      <button class="ghost-btn" id="openWikiBtn2"><span class="lbl-full">展览百科</span><span class="lbl-short">百科</span></button>
+      <button class="ghost-btn" id="openTimelineBtn2"><span class="lbl-full">时间轴</span><span class="lbl-short">时间</span></button>
+      <button class="ghost-btn" id="openCatalogBtn"><span class="lbl-full">文物目录</span><span class="lbl-short">目录</span></button>
+      <button class="ghost-btn" id="openGuideBtn"><span class="lbl-full">观展指南</span><span class="lbl-short">指南</span></button>
+    </header>
+
+    <div class="gallery-stage" id="stage">
+      <div class="ceiling"></div>
+      <div class="wall-bg"></div>
+      <div class="floor"></div>
+      <div class="wall-viewport" id="wallViewport">
+        <div class="wall" id="wall"></div>
+      </div>
+      <button class="nav-arrow left" id="prevBtn" title="向前">‹</button>
+      <button class="nav-arrow right" id="nextBtn" title="向后">›</button>
+      <div class="pan-hint" id="panHint">拖动 / 滚轮横向移动 · 点击文物查看详情</div>
+      <div class="room-loading" id="roomLoading"><span></span></div>
+    </div>
+
+    <footer class="gallery-bottom">
+      <div class="room-route" id="roomRoute"></div>
+      <div class="pan-track"><i id="panFill"></i></div>
+    </footer>
+  </section>
+
+  <!-- ============ 展厅门槛 ============ -->
+  <div class="overlay threshold" id="threshold" hidden>
+    <img class="threshold-bg" id="thresholdBg" alt="" referrerpolicy="no-referrer">
+    <div class="threshold-shade"></div>
+    <div class="threshold-panel" id="thresholdPanel">
+      <p class="threshold-kicker" id="thresholdKicker"></p>
+      <h2 class="threshold-title" id="thresholdTitle"></h2>
+      <p class="threshold-sub" id="thresholdSub"></p>
+      <div class="threshold-intro" id="thresholdIntro"></div>
+      <button class="primary" id="thresholdEnterBtn">进入展厅 <span>→</span></button>
+      <p class="threshold-tip">进入后：拖动或滚动鼠标横向移动，点击文物查看详细信息</p>
+    </div>
+  </div>
+
+  <!-- ============ 展品详情 ============ -->
+  <div class="overlay detail" id="detail" hidden>
+    <header class="detail-top">
+      <button class="icon-btn" id="detailCloseBtn">← <span>返回展厅</span></button>
+      <span class="detail-counter" id="detailCounter"></span>
+      <div class="detail-nav">
+        <button class="ghost-btn" id="detailPrevBtn">← 上一件</button>
+        <button class="ghost-btn" id="detailNextBtn">下一件 →</button>
+      </div>
+    </header>
+    <main class="detail-main">
+      <section class="viewer" id="viewer">
+        <div class="viewer-stage" id="viewerStage">
+          <div class="viewer-art" id="viewerArt"><img id="viewerImg" alt=""></div>
+        </div>
+        <div class="viewer-tools">
+          <button class="tool-btn" id="zoomOutBtn" title="缩小">−</button>
+          <button class="tool-btn" id="zoomResetBtn" title="全览">全览</button>
+          <button class="tool-btn" id="zoomInBtn" title="放大">＋</button>
+          <button class="tool-btn viewer-full-btn" id="viewerFullBtn" title="全屏查看图片" aria-pressed="false">全屏</button>
+        </div>
+        <button class="viewer-exit" id="viewerExitBtn" type="button" title="退出全屏" aria-label="退出全屏">×</button>
+        <div class="viewer-hint" id="viewerHint">滚轮缩放 · 拖动查看细节 · 双击放大</div>
+        <div class="viewer-scrollbar" id="viewerScrollbar"><i></i></div>
+        <div class="viewer-thumbs" id="viewerThumbs"></div>
+      </section>
+      <aside class="detail-panel" id="detailPanel">
+        <div class="detail-head">
+          <p class="detail-kicker" id="detailKicker"></p>
+          <h2 class="detail-name" id="detailName"></h2>
+          <p class="detail-artist" id="detailArtist"></p>
+          <p class="detail-meta" id="detailMeta"></p>
+          <p class="detail-caption" id="detailCaption"></p>
+        </div>
+        <div class="detail-tags" id="detailTags"></div>
+        <div class="detail-body" id="detailBody"></div>
+        <div class="detail-foot" id="detailFoot"></div>
+        <div class="detail-graph" id="detailGraph"></div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- ============ 展品目录 ============ -->
+  <div class="overlay catalog" id="catalog" hidden>
+    <header class="catalog-top">
+      <div class="catalog-title">
+        <p class="eyebrow">EXHIBIT INDEX</p>
+        <h2>文物目录</h2>
+      </div>
+      <input class="catalog-search" id="catalogSearch" type="search" placeholder="搜索文物、帝国或地点…" autocomplete="off">
+      <button class="icon-btn" id="catalogCloseBtn">关闭 ×</button>
+    </header>
+    <nav class="catalog-filters" id="catalogFilters"></nav>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+
+  <!-- ============ 观展指南 ============ -->
+  <div class="overlay guide" id="guide" hidden>
+    <div class="guide-panel">
+      <p class="eyebrow">VISITOR GUIDE</p>
+      <h2>观展指南</h2>
+      <p class="guide-lede">三个帝国展厅彼此独立，没有固定的参观顺序。可以先看莫卧儿的玉石与兵器，再进入波斯的诗歌与细密画，最后走进奥斯曼的书法、宫廷与伊兹尼克陶器。</p>
+      <details class="guide-overview" id="guideOverview"></details>
+      <div class="guide-grid">
+        <div class="guide-item"><b>移动</b><p>在展厅中按住鼠标左右拖动，或直接滚动鼠标滚轮，即可沿着展墙前后移动。走到尽头会自动进入下一单元。</p></div>
+        <div class="guide-item"><b>看文物</b><p>点击任意文物进入详情页，可缩放、拖动、全屏查看，并在底部缩略图间切换多角度图片。详情页还提供文明、地点、类别标签与同类文物关联图。</p></div>
+        <div class="guide-item"><b>看地图</b><p>“帝国地图”以 NASA Blue Marble 卫星影像为底图，叠加 1300—1900 年关键年代的历史边界。疆域自首都向外渐淡、边缘柔化；拖动地图下方的时间轴，可看到帝国扩张与王朝更替。地图仍支持滚轮缩放和拖动平移，点击政权会显示简介、百科入口与相关文物。</p></div>
+        <div class="guide-item"><b>读时间轴</b><p>“时间轴”按帝国分轨排列展项，拖动即可横向浏览各帝国在不同年代的器物。点击年代组可展开该组全部文物，再点击进入详情。</p></div>
+        <div class="guide-item"><b>读词条</b><p>“展览百科”收录文明、工艺、主题与导览词条，正文配图不限于三张；词条内所有图片都可点击全屏观看，按 Esc 或“返回”即可回到词条。</p></div>
+        <div class="guide-item"><b>背景音乐</b><p>背景音乐为《Ceddin Deden》，首次点击页面后开始播放，可通过顶栏或左下角按钮随时关闭。</p></div>
+      </div>
+      <div class="guide-route" id="guideRoute"></div>
+      <p class="guide-note">说明：本页图文资料整理自微信公众号「獭的游乐场」的“图案的奇迹”系列文章，展品介绍来自展厅说明。展厅与文物目录只陈列具体文物；地图、建筑照片、复原图等背景配图集中在百科词条中。地图底图为 NASA Blue Marble 卫星影像，历史边界采用 Historical Basemaps（aourednik）1300—1900 年数据（CC BY-SA 4.0）并参考常见历史地图补绘，国界采用 Natural Earth 现代边界；疆域与着色为教学示意，不作为精确历史边界依据。</p>
+      <button class="primary" id="guideCloseBtn">知道了</button>
+    </div>
+  </div>
+
+  <!-- ============ 帝国地图 ============ -->
+  <section id="mapScreen" class="screen sub-screen" hidden>
+    <header class="sub-top">
+      <button class="icon-btn" id="mapBackBtn">← <span>首页</span></button>
+      <div class="sub-title">帝国地图 <span>Empires &amp; Dynasties, 1300–1922</span></div>
+      <div class="sub-actions">
+        <button class="ghost-btn music-btn" id="mapMusicBtn" title="背景音乐：Ceddin Deden"><span class="music-icon">♪</span></button>
+        <button class="ghost-btn" id="mapWikiBtn">展览百科</button>
+        <button class="ghost-btn" id="mapTimelineBtn">时间轴</button>
+        <button class="ghost-btn" id="mapCatalogBtn">文物目录</button>
+      </div>
+    </header>
+    <div class="map-main">
+      <div class="map-head">
+        <h2>帝国与王朝的疆域</h2>
+        <p>底图为 NASA Blue Marble 卫星影像，叠加 1300—1900 年关键年代的历史边界数据，以 1300—1922 年的时间轴串联奥斯曼、萨非、恺加、莫卧儿、帖木儿、马穆鲁克等政权。疆域着色自首都向外渐淡、边缘柔化；拖动下方时间轴，可查看帝国扩张与王朝更替。</p>
+      </div>
+      <div class="map-stage" id="mapStage">
+        <svg id="civMap" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="伊斯兰世界帝国与王朝疆域地图"></svg>
+        <div class="map-controls">
+          <button class="tool-btn" id="mapZoomIn" title="放大">＋</button>
+          <button class="tool-btn" id="mapZoomOut" title="缩小">−</button>
+          <button class="tool-btn" id="mapReset" title="重置视图">重置</button>
+        </div>
+        <div class="map-year" id="mapYear">1600 年</div>
+        <div class="map-civ-card" id="mapCivCard" hidden>
+          <button class="mcc-close" id="mapCivClose" type="button" aria-label="关闭简介">×</button>
+          <p class="mcc-kicker" id="mapCivKicker"></p>
+          <h3 id="mapCivName"></h3>
+          <p class="mcc-intro" id="mapCivIntro"></p>
+          <div class="mcc-actions">
+            <button class="ghost-btn" id="mapCivWiki">查看词条 →</button>
+            <button class="ghost-btn" id="mapCivFilter">相关文物</button>
+          </div>
+        </div>
+        <div class="map-hint">滚轮缩放 · 拖动平移 · 点击政权</div>
+      </div>
+      <div class="map-time">
+        <div class="mt-head">
+          <div class="mt-year"><b id="mapYearBig">1600</b><span>年</span><em id="mapYearEra"></em></div>
+          <button class="ghost-btn mt-play" id="mapPlayBtn" type="button"><i>▶</i><span>播放疆域变化</span></button>
+          <p class="mt-hint">拖动时间轴 · 查看扩张与王朝更替</p>
+        </div>
+        <div class="mt-body">
+          <div class="mt-labels" id="mapLaneLabels"></div>
+          <div class="mt-track" id="mapTrack" role="slider" tabindex="0" aria-label="地图年份" aria-valuemin="1300" aria-valuemax="1922" aria-valuenow="1600">
+            <div class="mt-lanes" id="mapLanes"></div>
+            <div class="mt-axis" id="mapAxis"></div>
+            <i class="mt-playhead" id="mapPlayhead"></i>
+          </div>
+        </div>
+        <div class="map-legend" id="mapLegend"></div>
+      </div>
+      <p class="map-note">历史边界：Historical Basemaps（aourednik）1300—1900 年数据（CC BY-SA 4.0），缺失年代参考常见历史地图补绘；底图：NASA Blue Marble，现代国界：Natural Earth。着色自首都向外渐淡，边缘经柔化处理；本图用于展览教学示意，不作为精确边界依据。</p>
+      <div class="map-info" id="mapInfo">
+        <aside class="civ-panel" id="civPanel"></aside>
+        <div class="civ-artifacts" id="civArtifacts"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 分类查找 ============ -->
+  <section id="filterScreen" class="screen sub-screen" hidden>
+    <header class="sub-top">
+      <button class="icon-btn" id="filterBackBtn">← <span>首页</span></button>
+      <div class="sub-title">分类查找 <span>Index by Empire &amp; Place</span></div>
+      <div class="sub-actions">
+        <button class="ghost-btn music-btn" id="filterMusicBtn" title="背景音乐：Ceddin Deden"><span class="music-icon">♪</span></button>
+        <button class="ghost-btn" id="filterWikiBtn">展览百科</button>
+        <button class="ghost-btn" id="filterMapBtn">帝国地图</button>
+        <button class="ghost-btn" id="filterCatalogBtn">文物目录</button>
+      </div>
+    </header>
+    <div class="filter-main">
+      <div class="filter-head">
+        <h2>按帝国与出土地点查找</h2>
+        <p>帝国与地点可以叠加筛选。文物归属与出土地点依据公众号正文中的说明整理，部分综合性展项归入“伊朗”“北印度”或所在区域。</p>
+      </div>
+      <div class="filter-groups">
+        <div class="filter-group">
+          <div class="fg-head"><h3>帝国</h3><button class="link-btn" data-clear="civ">清除</button></div>
+          <div class="filter-chips" id="civChips"></div>
+        </div>
+        <div class="filter-group">
+          <div class="fg-head"><h3>地点</h3><button class="link-btn" data-clear="place">清除</button></div>
+          <div class="filter-chips" id="placeChips"></div>
+        </div>
+      </div>
+      <div class="filter-summary" id="filterSummary"></div>
+      <div class="filter-results" id="filterResults"></div>
+    </div>
+  </section>
+
+  <!-- ============ 展览百科 ============ -->
+  <section id="wikiScreen" class="screen sub-screen" hidden>
+    <header class="sub-top">
+      <button class="icon-btn" id="wikiBackBtn">← <span>返回</span></button>
+      <div class="sub-title">展览百科 <span>Encyclopedia</span></div>
+      <div class="sub-actions">
+        <button class="ghost-btn music-btn" id="wikiMusicBtn" title="背景音乐：Ceddin Deden"><span class="music-icon">♪</span></button>
+        <button class="ghost-btn" id="wikiMapBtn">帝国地图</button>
+        <button class="ghost-btn" id="wikiTimelineBtn">时间轴</button>
+        <button class="ghost-btn" id="wikiFilterBtn">分类查找</button>
+        <button class="ghost-btn" id="wikiCatalogBtn">文物目录</button>
+      </div>
+    </header>
+    <div class="wiki-main">
+      <div class="wiki-head">
+        <h2>文明 · 工艺 · 主题</h2>
+        <p>从公众号正文中整理出的文明、工艺、主题与导览词条。每条词条都配相关图像与展项入口，配图不限于三张；词条内所有图片均可点击全屏观看，正文之后另有“更多图像”“相关展项”“相关词条”与来源。</p>
+      </div>
+      <div class="wiki-toolbar">
+        <div class="wiki-tabs" id="wikiTabs"></div>
+        <input class="catalog-search" id="wikiSearch" type="search" placeholder="搜索文明、工艺、主题…" autocomplete="off">
+      </div>
+      <div class="wiki-grid" id="wikiGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ 时间轴 ============ -->
+  <section id="timelineScreen" class="screen sub-screen" hidden>
+    <header class="sub-top">
+      <button class="icon-btn" id="timelineBackBtn">← <span>首页</span></button>
+      <div class="sub-title">时间轴 <span>Timeline of Empires</span></div>
+      <div class="sub-actions">
+        <button class="ghost-btn music-btn" id="timelineMusicBtn" title="背景音乐：Ceddin Deden"><span class="music-icon">♪</span></button>
+        <button class="ghost-btn" id="timelineMapBtn">帝国地图</button>
+        <button class="ghost-btn" id="timelineWikiBtn">展览百科</button>
+        <button class="ghost-btn" id="timelineCatalogBtn">文物目录</button>
+      </div>
+    </header>
+    <div class="timeline-main">
+      <div class="timeline-head">
+        <h2>帝国与器物</h2>
+        <p>按帝国分轨排列展项。直接按住拖动、滚动滚轮或使用方向按钮，即可沿时间线横向浏览不同年代的器物。点击年代组可展开该组全部文物；时间轴不设起止年份筛选。</p>
+      </div>
+      <div class="timeline-tools">
+        <span class="timeline-legend" id="timelineLegend"></span>
+        <div class="timeline-zoom">
+          <button class="tool-btn" id="timelineZoomOut" title="缩小">−</button>
+          <button class="tool-btn" id="timelineZoomIn" title="放大">＋</button>
+          <button class="tool-btn" id="timelineReset" title="回到开头">回到开头</button>
+        </div>
+      </div>
+      <div class="timeline-shell">
+        <div class="timeline-labels" id="timelineLabels"></div>
+        <div class="timeline-viewport" id="timelineViewport">
+          <div class="timeline-canvas" id="timelineCanvas"></div>
+        </div>
+      </div>
+      <p class="timeline-hint">拖动时间线或滚动鼠标 · 点击年代组查看该组文物</p>
+      <div class="timeline-items" id="timelineItems"></div>
+    </div>
+  </section>
+
+  <!-- ============ 词条阅读 ============ -->
+  <div class="wiki-reader" id="wikiReader" hidden>
+    <header class="wiki-reader-top">
+      <button class="icon-btn" id="wikiReaderBack">← <span>返回词条列表</span></button>
+      <span class="wr-type" id="wikiReaderType"></span>
+      <button class="icon-btn" id="wikiReaderClose">关闭 ×</button>
+    </header>
+    <div class="wiki-reader-scroll" id="wikiReaderBody"></div>
+  </div>
+
+  <!-- ============ 词条图片全屏 ============ -->
+  <div class="wiki-lightbox" id="wikiLightbox" hidden>
+    <button class="wl-close" id="wikiLightboxClose" type="button" aria-label="关闭">×</button>
+    <button class="wl-nav prev" id="wikiLightboxPrev" type="button" aria-label="上一张">‹</button>
+    <figure>
+      <img id="wikiLightboxImg" alt="" referrerpolicy="no-referrer">
+      <figcaption id="wikiLightboxCap"></figcaption>
+    </figure>
+    <button class="wl-nav next" id="wikiLightboxNext" type="button" aria-label="下一张">›</button>
+  </div>
+
+  <!-- ============ 标签百科 ============ -->
+  <div class="tag-wiki" id="tagWiki" hidden>
+    <div class="tw-panel" role="dialog" aria-modal="true" aria-labelledby="twTitle">
+      <p class="tw-kicker">ENCYCLOPEDIA</p>
+      <h3 class="tw-title" id="twTitle"></h3>
+      <p class="tw-kind" id="twKind"></p>
+      <div class="tw-body" id="twBody"></div>
+      <div class="tw-related">
+        <p class="tw-related-title">相关文物</p>
+        <div class="tw-works" id="twWorks"></div>
+      </div>
+      <p class="tw-source">据公众号「獭的游乐场」文章与常见伊斯兰艺术史资料整理</p>
+      <button class="ghost-btn" id="twCloseBtn" type="button">关闭</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="assets/audio/ceddin-deden.mp3" loop preload="auto"></audio>
+
+  <div class="loading-mask" id="loadingMask">
+    <div class="loading-seal">图</div>
+    <p>正在布展…</p>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+<script src="assets/data.js?v=20261125l"></script>
+<script src="assets/app.js?v=20261125l"></script>
+</body>
+</html>
+
